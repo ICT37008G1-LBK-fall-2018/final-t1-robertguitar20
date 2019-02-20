@@ -79,15 +79,17 @@ function getAlbums(e) {
 /// ____________________________________________________________________///
 
 /// ________________ Davaleba 4 __________________ ///
-function* generator(i) {
-  if (i % 2 === 0) {
+function* generator() {
+  let i = 0;
+  while(true){
     yield i;
+    i += 2;
   }
 }
 
+let gn = generator();
+
 for (let i = 0; i <= 10; i++) {
-  if (generator(i).next().value !== undefined) {
-    console.log(generator(i).next().value);
-  }
+    console.log(gn.next().value))
 }
 /// ____________________________________________________________________///
